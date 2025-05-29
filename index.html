@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>衞理清潔服務有限公司 - 專業清潔，煥然一新</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff2d55;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff2d55;
+        }
+        .hero {
+            background: url('office.jpg') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+        }
+        .hero h1, .hero p, .hero a {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero p {
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .hero-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff2d55;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+        .hero-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .services, .about, .contact, .testimonials, .case {
+            padding: 60px;
+            text-align: center;
+        }
+        .about {
+            background-color: #f0f8ff;
+        }
+        .services {
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .case {
+            background-color: #f0f8ff;
+        }
+        .testimonials {
+            background-color: #fff;
+        }
+        .contact {
+            background-color: #f0f8ff; /* Light Coral */
+        }
+        .services h2, .about h2, .contact h2, .testimonials h2, .case h2 {
+            color: #ff2d55;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .service {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+        }
+        .service i {
+            font-size: 50px;
+            color: #ff2d55;
+            margin-bottom: 15px;
+        }
+        .testimonial {
+            text-align: center;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #555;
+        }
+        .whatsapp-contact {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebd57;
+        }
+        .whatsapp-button i {
+            margin-right: 10px;
+        }
+        .contact-info {
+            width: 100%;
+            max-width: 500px;
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .contact-info a {
+            color: #ff2d55;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 25px;
+            text-align: center;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #ff2d55;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .service {
+                width: 80%;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero p {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="logo.jpg" alt="衞理清潔服務有限公司標誌" style="width: 100px; height: auto;">
+        <span>衞理清潔服務有限公司 <br> William Cleaning Service Limited</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#about">公司簡介</a></li>
+            <li><a href="#services">服務範圍</a></li>
+            <li><a href="#case-info">服務案例</a></li>
+            <li><a href="#comment">客户評價</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="about" class="section hero">
+        <h1>專業清潔，讓每個角落煥然一新</h1>
+        <p>為您的家與辦公室帶來無可比擬的潔淨與舒適</p>
+        <a href="https://wa.me/85259430961?text=您好，我想查詢清潔服務。" target="_blank" class="hero-button">WhatsApp報價</a>
+    </section>
+    <section id="about-info" class="about">
+        <h2>公司簡介</h2>
+        <p>本公司自成立以來，我們始終以「高效率丶高要求丶高質素」為宗旨，專注於提供高品質、專業且價格合理的的清潔服務。我們的使命是為客戶創造一個乾淨和舒適的環境。
+            無論是住宅、學校、工廠大廈、還是寫字樓，我們都能提供量身定制的清潔解決方案，以滿足不同客戶的需求。</p>
+
+        <h2>為甚麼選擇我們？</h2>
+        <ul>
+            <li><strong>專業團隊：</strong>我們的員工均經過嚴格的培訓，具備豐富的經驗，能夠應對各種清潔挑戰，，讓每一次清潔都無後顧之憂。</li>
+            <li><strong>客戶至上：</strong>我們重視每一位客戶的需求，提供量身定制的服務方案，並以高標準的服務質量贏得客戶的信賴。</li>
+            <li><strong>價格合理：</strong>我們提供以絕對合理的價格，確保您在獲得高品質服務的同時，也能享受到合理的收費。</li>
+        </ul>
+    </section>
+    <section id="services" class="section services">
+        <h2>服務範圍</h2>
+        <p>我們提供全面的清潔服務，涵蓋住宅、商業和學校。無論您需要定期清潔還是深度清潔，我們都能提供專業、高效的解決方案，滿足您的需求。</p>
+        <div class="service">
+            <i class="fas fa-home"></i>
+            <h3>家居清潔</h3>
+            <p>為您的家提供徹底清潔，打造舒適生活環境。</p>
+            <ul>
+                <li><strong>定期清潔</strong>：日常清潔，包括吸塵、拖地，保持家居整潔。</li>
+                <li><strong>深度清潔</strong>：徹底清潔每個角落，包括難以觸及的區域，如櫥櫃內部。</li>
+                <li><strong>搬家清潔</strong>：搬入新居或搬離舊居時的全面清潔，確保環境一塵不染。</li>
+                <li><strong>裝修後清潔</strong>：清潔裝修後的灰塵、油漆殘留和建築雜物，讓新空間煥然一新。</li>
+            </ul>
+        </div>
+        <div class="service">
+            <i class="fas fa-building"></i>
+            <h3>商業清潔</h3>
+            <p>為不同類型的商業場所提供專業清潔，提升環境品質與專業形象。</p>
+            <ul>
+                <li><strong>辦公室清潔</strong>：清潔工作室、會議室和公共區域，打造整潔的工作環境。</li>
+                <li><strong>零售空間清潔</strong>：保持商店的乾淨，為顧客提供愉悅的購物體驗。</li>
+                <li><strong>餐廳清潔</strong>：提供符合衛生標準的餐廳清潔服務，確保您的餐飲環境安全、衛生。</li>
+            </ul>
+        </div>
+        <div class="service">
+            <i class="fas fa-school"></i>
+            <h3>學校清潔</h3>
+            <p>為學校和其他教育機構提供安全的清潔服務，提供全面深度清潔服務。</p>
+            <ul>
+                <li><strong>課室清潔</strong>：清潔桌椅、黑板和地板，確保學習環境整潔舒適。</li>
+                <li><strong>廁所清潔</strong>：提供全面的廁所清潔服務，包括消毒馬桶、洗手盆和地面，確保學生和教職員的衛生安全。</li>
+                <li><strong>食堂清潔</strong>：清潔餐廳和食堂，確保用餐環境的衛生和整潔。</li>
+                <li><strong>戶外區域清潔</strong>：清理操場、花園和其他戶外活動區域，保持環境的整潔與安全。</li>
+            </ul>
+        </div>
+        <div class="service">
+            <i class="fas fa-broom"></i>
+            <h3>專業清潔服務</h3>
+            <p>針對特定需求提供專業化清潔，滿足更高標準的要求。</p>
+            <ul>
+                <li><strong>地毯清潔</strong>：深層清潔地毯，去除污漬保持乾淨。</li>
+                <li><strong>地板打蠟</strong>：清潔並為地板打蠟，提升光澤並提供保護。</li>
+                <li><strong>消毒服務</strong>：使用符合標準的消毒劑，殺滅細菌和病毒，保護您的健康。</li>
+            </ul>
+        </div>
+    </section>
+    <section id="case-info" class="section case">
+        <h2>服務案例</h2>
+        <p>我們的清潔服務涵蓋各種場合，包括家庭、辦公室、學校和商業場所。以下是我們的一些案例：</p>
+        <ul>
+            <li>家庭深度清潔 - 為一個家庭提供全面的清潔服務，讓他們的居住環境煥然一新。</li>
+            <li>商業辦公室清潔 - 為一家大型企業提供定期清潔服務，提升辦公環境的整潔度。</li>
+            <li>學校清潔 - 針對學校的需求，提供專業清潔服務，確保學生的學習環境安全衛生。</li>
+        </ul>
+    </section>
+    <section id="comment" class="section testimonials">
+        <h2>客戶評價</h2>
+        <div class="testimonial">
+            <p>"清潔效果驚艷，服務態度一流！"</p>
+            <cite>- 張三</cite>
+        </div>
+        <div class="testimonial">
+            <p>"快速又專業，值得信賴的清潔公司！"</p>
+            <cite>- 李四</cite>
+        </div>
+    </section>
+    <section id="contact" class="section contact">
+        <h2>聯絡我們</h2>
+        <div class="whatsapp-contact">
+            <p>歡迎透過WhatsApp與我們聯絡，我們會盡快回覆您的查詢。</p>
+            <a href="https://wa.me/85259430961?text=您好，我想查詢清潔服務。" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp聯絡我們
+            </a>
+        </div>
+        <div class="contact-info">
+            <p>電話/WhatsApp: <a href="tel:85259430961">(852) 59430961</a></p>
+            <p>電子郵件: <a href="mailto:wailliamservice@gmail.com">wailliamservice@gmail.com</a></p>
+            <p>地址: 香港九龍觀塘開源道49號創貿廣場2305室</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>© 2023 衞理清潔服務有限公司。保留所有權利。</p>
+    <ul>
+        <li><a href="#">隱私政策</a></li>
+        <li><a href="#">服務條款</a></li>
+    </ul>
+</footer>
+</body>
+</html>
+
