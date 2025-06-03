@@ -27,17 +27,14 @@
             display: flex;
             align-items: center;
         }
-
         .logo img {
             margin-right: 10px;
         }
-
         .logo span {
             font-size: 28px;
             font-weight: bold;
-            color: #ff2d55;
+            color: #800080;
         }
-
         nav ul {
             list-style: none;
             display: flex;
@@ -83,6 +80,7 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: fadeInDown 1s ease-in-out;
+            color: #fff;
         }
         .hero p {
             font-size: 28px;
@@ -93,7 +91,7 @@
         .hero-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #ff2d55;
+            background-color: #25D366;
             color: #fff;
             text-decoration: none;
             font-size: 20px;
@@ -125,11 +123,15 @@
             background-color: #fff;
         }
         .contact {
-            background-color: #f0f8ff; /* Light Coral */
+            background-color: #f0f8ff;
         }
         .services h2, .about h2, .contact h2, .testimonials h2, .case h2 {
-            color: #ff2d55;
+            color: #800080;
             font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .services p {
             margin-bottom: 40px;
         }
         .service {
@@ -138,7 +140,7 @@
             margin-bottom: 30px;
             background-color: #f8f9fa;
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
@@ -150,11 +152,37 @@
             color: #ff2d55;
             margin-bottom: 15px;
         }
-        .testimonial {
-            text-align: center;
-            margin-bottom: 25px;
-            font-style: italic;
-            color: #555;
+        .service h3 {
+            color: #800080;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
         }
         .whatsapp-contact {
             width: 100%;
@@ -181,13 +209,13 @@
         .contact-info {
             width: 100%;
             max-width: 500px;
-            color: #333;
+            color: #000;
             font-size: 18px;
-            text-align: center;
+            text-align: left;
             margin: 20px auto;
         }
         .contact-info a {
-            color: #ff2d55;
+            color: #000000;
             text-decoration: none;
         }
         .contact-info a:hover {
@@ -213,15 +241,31 @@
         footer a:hover {
             color: #ff2d55;
         }
+        .case ul {
+            list-style: none;
+            padding: 0;
+        }
+        .case li {
+            margin-bottom: 20px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .case-image {
+            width: 100%;
+            height: auto;
+        }
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; transform: none; }
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; transform: none; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .services {
                 flex-direction: column;
                 align-items: center;
@@ -235,6 +279,9 @@
             .hero p {
                 font-size: 20px;
             }
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -246,7 +293,7 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#about">公司簡介</a></li>
+            <li><a href="#about-info">公司簡介</a></li>
             <li><a href="#services">服務範圍</a></li>
             <li><a href="#case-info">服務案例</a></li>
             <li><a href="#comment">客户評價</a></li>
@@ -264,7 +311,6 @@
         <h2>公司簡介</h2>
         <p>本公司自成立以來，我們始終以「高效率丶高要求丶高質素」為宗旨，專注於提供高品質、專業且價格合理的的清潔服務。我們的使命是為客戶創造一個乾淨和舒適的環境。
             無論是住宅、學校、工廠大廈、還是寫字樓，我們都能提供量身定制的清潔解決方案，以滿足不同客戶的需求。</p>
-
         <h2>為甚麼選擇我們？</h2>
         <ul>
             <li><strong>專業團隊：</strong>我們的員工均經過嚴格的培訓，具備豐富的經驗，能夠應對各種清潔挑戰，，讓每一次清潔都無後顧之憂。</li>
@@ -274,7 +320,9 @@
     </section>
     <section id="services" class="section services">
         <h2>服務範圍</h2>
-        <p>我們提供全面的清潔服務，涵蓋住宅、商業和學校。無論您需要定期清潔還是深度清潔，我們都能提供專業、高效的解決方案，滿足您的需求。</p>
+        <ul>
+            我們提供全面的清潔服務，涵蓋住宅、商業和學校。無論您需要定期清潔還是深度清潔，我們都能提供專業、高效的解決方案，滿足您的需求。
+        </ul>
         <div class="service">
             <i class="fas fa-home"></i>
             <h3>家居清潔</h3>
@@ -322,20 +370,66 @@
         <h2>服務案例</h2>
         <p>我們的清潔服務涵蓋各種場合，包括家庭、辦公室、學校和商業場所。以下是我們的一些案例：</p>
         <ul>
-            <li>家庭深度清潔 - 為一個家庭提供全面的清潔服務，讓他們的居住環境煥然一新。</li>
-            <li>商業辦公室清潔 - 為一家大型企業提供定期清潔服務，提升辦公環境的整潔度。</li>
-            <li>學校清潔 - 針對學校的需求，提供專業清潔服務，確保學生的學習環境安全衛生。</li>
+            <li>
+                <p>商業辦公室清潔 - 為一家大型企業提供定期清潔服務，提升辦公環境的整潔度。</p>
+                <div class="image-grid">
+                    <img src="office6.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office2.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office3.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office5.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office9.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office7.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office8.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="office4.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="meetingroom.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="meetingroom3.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="toilet.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                    <img src="toilet4.JPG" alt="商業辦公室清潔示意圖" class="case-image">
+                </div>
+            </li>
+            <li>
+                <p>學校清潔 - 針對學校的需求，提供專業清潔服務，確保學生的學習環境安全衛生。</p>
+                <div class="image-grid">
+                    <img src="classroom.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom2.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom3.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom4.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom5.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom6.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="classroom7.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="toilet3.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="school.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="lab.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="lab2.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="playground.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="schoolhall.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="schoolhall2.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="schoolhall3.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="toilet2.JPG" alt="學校清潔示意圖" class="case-image">
+                    <img src="toilet5.JPG" alt="學校清潔示意圖" class="case-image">
+                </div>
+            </li>
         </ul>
     </section>
     <section id="comment" class="section testimonials">
         <h2>客戶評價</h2>
-        <div class="testimonial">
-            <p>"清潔效果驚艷，服務態度一流！"</p>
-            <cite>- 張三</cite>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="comment1.png" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="comment2.png" style="width:80%">
+            </div>
+            <div class="mySlides fade">
+                <img src="comment3.png" style="width:80%">
+            </div>
         </div>
-        <div class="testimonial">
-            <p>"快速又專業，值得信賴的清潔公司！"</p>
-            <cite>- 李四</cite>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
     <section id="contact" class="section contact">
@@ -360,6 +454,31 @@
         <li><a href="#">服務條款</a></li>
     </ul>
 </footer>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlides();
+    }
+</script>
 </body>
 </html>
-
